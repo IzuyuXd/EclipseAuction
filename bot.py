@@ -286,7 +286,7 @@ def load_admins():
         env_admins = [int(admin_id) for admin_id in os.getenv("ADMIN_IDS").split(",") if admin_id]
     except Exception as e:
         debug_log(f"Error parsing env admins: {str(e)}")
-        env_admins = [6468620868,1824270351,8404111906,6469120581]  # fallback to your admin ID
+        env_admins = [7200052671, 8275200712]  # fallback to your admin ID
     
     # Also load from database if available
     try:
@@ -318,10 +318,10 @@ load_dotenv("auc.env")
 TOKEN = os.getenv("BOT_TOKEN")
 ADMINS = load_admins()
 #ADMINS = [int(admin_id) for admin_id in os.getenv("ADMIN_IDS").split(",") if admin_id]
-CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003321180638"))
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@sjsjwhabb")
-DISCUSSION_ID = int(os.getenv("DISCUSSION_ID", "-1003333433940"))
-LOGS_CHANNEL_ID = int(os.getenv("LOGS_CHANNEL_ID", "-1003333433940"))
+CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003974698399"))
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@eclipseauctiom")
+DISCUSSION_ID = int(os.getenv("DISCUSSION_ID", "-1003957563675"))
+LOGS_CHANNEL_ID = int(os.getenv("LOGS_CHANNEL_ID", "-1003960158962"))
 
 def ensure_single_instance():
     """
@@ -1282,8 +1282,8 @@ def start(update: Update, context: CallbackContext):
         "",
         "✦ <b><u>Community Links</u></b>",
         "",
-        f"          ⤷ Channel ✧ <a href='https://t.me/pokesforsell'>PokeForSale</a>",
-        f"          ⤷ Group   ✧ <a href='https://t.me/pokerookies'>PokeRookies</a>",
+        f"          ⤷ Channel ✧ <a href='https://t.me/pokepia'>Pokepia</a>",
+        f"          ⤷ Group   ✧ <a href='https://t.me/eclipseauction'>EclipseAuction</a>",
         "",
         "<blockquote>✦ Use <code>/help</code> to see commands",
         "✦ Use <code>/add</code> to add items</blockquote>",
@@ -1291,8 +1291,8 @@ def start(update: Update, context: CallbackContext):
     
     keyboard = [
         [
-            InlineKeyboardButton("✦ Channel", url="https://t.me/pokesforsell"),
-            InlineKeyboardButton("✦ Group", url="https://t.me/pokerookies")
+            InlineKeyboardButton("✦ Channel", url="https://t.me/pokepia"),
+            InlineKeyboardButton("✦ Group", url="https://t.me/EclipseAuction")
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
