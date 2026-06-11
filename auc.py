@@ -253,12 +253,12 @@ def init_profiles_db():
         raise
 
 load_dotenv(".env")
-TOKEN = os.getenv("BOT_TOKEN", "8271241418:AAHOBL2smhLaixCUFCrR3YzKn8J9_mJsdcQ")
-ADMINS = [int(admin_id) for admin_id in os.getenv("ADMIN_IDS", "6468620868").split(",") if admin_id]
-CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003321180638"))
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@sjsjwhabb")
-DISCUSSION_ID = int(os.getenv("DISCUSSION_ID", "-1003333433940"))
-LOGS_CHANNEL_ID = int(os.getenv("LOGS_CHANNEL_ID", "-1003333433940"))
+TOKEN = os.getenv("BOT_TOKEN", "8917828586:AAGQ7y-P2Lf5yzAzV86EmiWk_-h6TGYEs7M")
+ADMINS = [int(admin_id) for admin_id in os.getenv("ADMIN_IDS", "7200052671").split(",") if admin_id]
+CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003974698399"))
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@eclipseauction")
+DISCUSSION_ID = int(os.getenv("DISCUSSION_ID", "-1003957563675"))
+LOGS_CHANNEL_ID = int(os.getenv("LOGS_CHANNEL_ID", "-1003960158962"))
 
 def ensure_single_instance():
     try:
