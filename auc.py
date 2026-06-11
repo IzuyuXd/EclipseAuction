@@ -1035,8 +1035,8 @@ def start(update: Update, context: CallbackContext):
         "👋 Welcome to the Pokemart Bot",
         "",
         "👉 Also Join :-",
-        "🌟 Channel :- @pokesforsell",
-        "🌟 Trade GC :- @pokerookies",
+        "🌟 Channel :- @pokepia",
+        "🌟 Trade GC :- @eclipseauctiontrade",
         "",
         "💡 Use /help to see commands",
     ]
@@ -1897,7 +1897,7 @@ def handle_category(update: Update, context: CallbackContext):
 
     if category == 'tms':
         query.edit_message_text(
-            "📝 Please forward the TM details from @HexaMonBot\n"
+            "📝 Please forward the TM details from @PokeEclipseXBot\n"
             "(This should include all TM information)"
         )
         return GET_TM_DETAILS
@@ -1914,11 +1914,11 @@ def is_tm_message(message: Message) -> bool:
 def handle_tm_details(update: Update, context: CallbackContext):
     try:
         if not update.message or not update.message.forward_from:
-            update.message.reply_text("❌ Please forward the original message from @HexaMonBot")
+            update.message.reply_text("❌ Please forward the original message from @PokeEclipseXBot")
             return GET_TM_DETAILS
 
-        if update.message.forward_from.username.lower() != "hexamonbot":
-            update.message.reply_text("❌ Please forward directly from @HexaMonBot")
+        if update.message.forward_from.username.lower() != "pokeeclipsexbot":
+            update.message.reply_text("❌ Please forward directly from @PokeEclipseXBot")
             return GET_TM_DETAILS
 
         tm_text = update.message.text or update.message.caption or ""
@@ -1948,13 +1948,13 @@ def handle_pokemon_name(update: Update, context: CallbackContext):
     context.user_data['seller_id'] = update.effective_user.id
     save_temp_data(update.effective_user.id, context.user_data)
     update.message.reply_text(
-        f"🌿 Now forward {pokemon_name}'s Nature page from @HexaMonBot"
+        f"🌿 Now forward {pokemon_name}'s Nature page from @PokeEclipseXBot"
     )
     return GET_NATURE
 
 def handle_nature(update: Update, context: CallbackContext):
     if not is_forwarded_from_hexamon(update):
-        update.message.reply_text("❌ Please forward directly from @HexaMonBot!")
+        update.message.reply_text("❌ Please forward directly from @PokeEclipseXBot!")
         return GET_NATURE
 
     try:
@@ -1963,7 +1963,7 @@ def handle_nature(update: Update, context: CallbackContext):
             'text': update.message.caption or "Nature details not available"
         }
         save_temp_data(update.effective_user.id, context.user_data)
-        update.message.reply_text("📊 Now forward IVs/EVs page from @HexaMonBot")
+        update.message.reply_text("📊 Now forward IVs/EVs page from @PokeEclipseXBot")
         return GET_IVS
     except Exception as e:
         debug_log(f"Nature handling failed: {str(e)}")
@@ -1974,7 +1974,7 @@ def handle_ivs(update: Update, context: CallbackContext):
     if not is_forwarded_from_hexamon(update):
         update.message.reply_text(
             "❌ Invalid IV/EV page!\n"
-            "Please forward the original message directly from @HexaMonBot"
+            "Please forward the original message directly from @PokeEclipseXBot"
         )
         return GET_IVS
 
@@ -1987,14 +1987,14 @@ def handle_ivs(update: Update, context: CallbackContext):
         'text': update.message.caption or "No IV/EV details provided"
     }
     save_temp_data(update.effective_user.id, context.user_data)
-    update.message.reply_text("⚔️ Now forward the Moveset page from @HexaMonBot")
+    update.message.reply_text("⚔️ Now forward the Moveset page from @PokeEclipseXBot")
     return GET_MOVESET
 
 def handle_moveset(update: Update, context: CallbackContext):
-    if not is_forwarded_from_hexamon(update):
+    if not is_forwarded_from_pokeeclipsexbot(update):
         update.message.reply_text(
             "❌ Invalid moveset page!\n"
-            "1. Open @HexaMonBot\n"
+            "1. Open @PokeEclipseXBot\n"
             "2. Find the moveset\n"
             "3. Forward it here"
         )
